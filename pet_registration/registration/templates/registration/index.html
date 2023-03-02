@@ -1,0 +1,20 @@
+{% if owners_list %}
+<h1>Pets By Owner</h1>
+    <ul>
+    {% for owner in owners_list %}
+        <li>{{ owner.first_name }} {{ owner.last_name }}</li>
+        <ul>
+        {% for pet in owner.pet_set.all %}
+            <li>{{ pet.name }} - {{ pet.type }}</li>
+            <ul>
+                {% for weigh_in in pet.petweight_set.all %}
+                    <li>{{ weigh_in.weight }}lb on {{ weigh_in.weight_date }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No owners are available.</p>
+{% endif %}
