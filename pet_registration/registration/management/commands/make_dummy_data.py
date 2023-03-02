@@ -37,7 +37,7 @@ class Command(BaseCommand):
 
         with open("pets.csv", "w") as f:
             f.write(
-                "owner_first_name,owner_last_name,owner_address1,owner_address2,owner_city,owner_state,owner_postal_code,owner_phone,,pet_name,pet_type,pet_birthday,pet_weight1,pet_weight1_date,pet_weight2,pet_weight2_date\n"
+                "owner_first_name,owner_last_name,owner_address1,owner_address2,owner_city,owner_state,owner_postal_code,owner_phone,pet_name,pet_type,pet_birthday,pet_weight1,pet_weight1_date,pet_weight2,pet_weight2_date\n"
             )
             for owner_num in range(10):
                 owner_first_name = names.get_first_name()
