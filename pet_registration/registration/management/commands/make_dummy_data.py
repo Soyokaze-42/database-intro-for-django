@@ -18,6 +18,7 @@ class Command(BaseCommand):
         owners = []
         pets = []
         pet_weights = []
+        pet_count = 0
 
         # Setup the database
         db_connection = sqlite3.connect("pets.db")
@@ -79,7 +80,8 @@ class Command(BaseCommand):
                 for pet_num in range(random.randint(1, 10)):
                     pet_name = petname.adverb().capitalize() + " " + petname.adjective().capitalize()
                     pet_type = petname.name()
-                    pet_id = pet_num
+                    pet_id = pet_count
+                    pet_count += 1
                     pet_birthday = datetime.datetime.fromtimestamp(
                         random.randint(
                             int(datetime.datetime.now().timestamp() - 500000000),
