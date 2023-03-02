@@ -68,4 +68,16 @@ JOIN pet ON owner.id = pet.owner_id
 JOIN pet_weight ON pet.id = pet_weight.pet_id;"
 ```
 
-You can login to the admin site at http://localhost:8000/admin. You can also run the server and go to http://localhost:8000 to see the app.
+Lastly, we are going to look at the Django models that create this database. An ORM is a way of abstracting the database so developers can write application code that interacts with the database instead of SQL. Django has a few options for database backends, too. The ORM handles the differences between the different backends. Sqlite3 is the default backend for Django, the easiest to start, and what we are using in this walkthrough.
+
+Open up the file pet_registration/pet_registration/models.py. This file contains the models that create the database. The models are defined as classes that inherit from django.db.models.Model. Each class attribute is a field in the database. The field types are defined in django.db.models. The one field that is missing is the id field. Django takes care of this for us. The id field is an auto-incrementing integer that is the primary key for tables.
+
+As a bonus, we registered the models in the admin site in the file here: pet_registration/pet_registration/admin.py. The admin site is a great way to see the data in the database and to make changes to it with no SQL required.
+
+As an extra bonus, we created a view and a template in Django to display the data in the database. The view is found here: pet_registration/pet_registration/views.py. The template is found here: pet_registration/pet_registration/templates/pet_registration/index.html.
+
+To run the server, run the following command:
+```python manage.py runserver```
+
+You can also run the server and go to http://localhost:8000 to see the data in the database through the view.
+You can also go to http://localhost:8000/admin to see the data in the database in the admin site.
