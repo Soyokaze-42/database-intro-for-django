@@ -8,7 +8,7 @@ cd pet_registration
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py make_dummy_data
-python manage.py makesuperuser
+python manage.py createsuperuser
 ```
 
 This will create a sqlite3 database with dummy data in it and a superuser for you to login to the admin site later. First, we are going to to look through the data in pets.csv and query a sample database.
