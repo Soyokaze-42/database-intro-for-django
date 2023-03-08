@@ -1,6 +1,6 @@
 Database introduction for Django developers
 
-This repo is for an activity to introduce databases to Django developers. To flow with Django, we need a data-centric view of our application. Django has a wonderful ORM that allows us to interact with our database in a Pythonic way. This is a great way to use a database in Django, but it is important to understand how the database works and how to interact with it directly.
+This repo is for an activity to introduce databases to Django developers. To flow with Django, we need a data-centric view of our application. Django has a great way to interact with our database in a Pythonic way called an Object Relational Mapping (ORM). This makes it easier to use a database in Django, but it is important to understand how databases work to effectively design models.
 
 To get started, make sure you have python 3 installed, clone this repo, cd into the clone, and run the following commands:
 ```
